@@ -1,0 +1,31 @@
+<%= form_for(@selectable, html: {class: "form-horizontal"}) do |f| %>
+  <% if @selectable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selectable.errors.count, "error") %> prohibited this selectable from being saved:</h2>
+
+      <ul>
+      <% @selectable.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :category, t("Category"), class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+        <%= f.select :category, Selectables::Selectable::SELECTABLE_CATEGORIES,{prompt: t("Category")}, { class: "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :value, "Valeur", class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+        <%= f.text_field :value, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Valider", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

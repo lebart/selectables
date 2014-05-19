@@ -1,0 +1,12 @@
+<%= content_for :menu_top do %>
+    <li><%= link_to selectables_path do%><i class="glyphicon glyphicon-list"></i> Liste des options<% end %></li>
+    <li><%= link_to new_selectable_path do%><i class="glyphicon glyphicon-plus"></i> Ajouter une option<% end %></li>
+
+    <% if params[:action] == 'edit' %>
+      <li><%= link_to @selectable, method: :delete, data: { confirm: "Supprimer l'option?" } do%><i class="glyphicon glyphicon-minus"></i> Suprimer l'option<% end %></li>
+    <% end %>
+
+    <% if params[:action] == 'show' %>
+      <li><%= link_to edit_selectable_path(@selectable) do %><i class="glyphicon glyphicon-wrench"></i> Modifier "<%= @selectable.selectable_value %>"<% end %></li>
+    <% end %>
+<% end %>

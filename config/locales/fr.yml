@@ -1,0 +1,11 @@
+fr:
+  #Selectables
+  Selectable category: "Catégorie"
+  Selectable value: "Valeur"
+  value: "Valeur"
+  category: "Catégorie"
+  Category: "Catégorie"
+  Editing selectable: "Modifier l'option"
+  general_category: "Catégorie générale"
+  selectable:
+    general_category: "Catégorie générale"
