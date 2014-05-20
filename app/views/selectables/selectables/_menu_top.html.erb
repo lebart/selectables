@@ -7,6 +7,6 @@
     <% end %>
 
     <% if params[:action] == 'show' %>
-      <li><%= link_to edit_selectable_path(@selectable) do %><i class="glyphicon glyphicon-wrench"></i> Modifier "<%= @selectable.selectable_value %>"<% end %></li>
+      <li><%= link_to edit_selectable_path(@selectable) do %><i class="glyphicon glyphicon-wrench"></i> Modifier "<%= @selectable.value %>"<% end %></li>
     <% end %>
 <% end %>
