@@ -24,5 +24,12 @@ module Selectables
      # For multilingual selectables uncomment below
      #items.map { |value| [I18n.t(value.value), value.value] }
     end
+
+    def self.selectable_tags(category)
+     items = Selectable.where('category LIKE ?', category ).order(:value)
+     items.map { |value| value.value }
+     # For multilingual selectables uncomment below
+     #items.map { |value| [I18n.t(value.value), value.value] }
+    end
   end
 end
