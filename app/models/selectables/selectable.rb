@@ -18,13 +18,16 @@ module Selectables
     # the select form. The firs value is the translation display for the UI and the second is
     # the value from the option and will be store in the db.
 
+    #build an array of arrays for select2 multiple forms, it actually uses ['value', 'value'] array but you can easily make an ['id','value'] array
+
     def self.selectable_items(category)
      items = Selectable.where('category LIKE ?', category ).order(:value)
-     items.map { |value| [value.value, value.value] }
+     items.map { |value| [value.value, value.id] }
      # For multilingual selectables uncomment below
      #items.map { |value| [I18n.t(value.value), value.value] }
     end
 
+    #here we are building a single array of values, I used it in my tagging sytem with select 2
     def self.selectable_tags(category)
      items = Selectable.where('category LIKE ?', category ).order(:value)
      items.map { |value| value.value }
