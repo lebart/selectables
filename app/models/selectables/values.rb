@@ -31,7 +31,7 @@ module Selectables
       #we recive the params from the controller and we parse it to extrat each attributes
       #then we convert the values which are string to integer corresponding to the id of a selectable
       params.each do |attribute, value|
-        new_params.merge!("#{attribute}" => Selectables::Values.find_or_create(value, "#{attribute}"))
+        new_params.merge!("#{attribute}" => Values.find_or_create(value, "#{attribute}"))
       end
 
       return new_params
