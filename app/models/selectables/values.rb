@@ -4,7 +4,7 @@ module Selectables
       if ids
         values = []
         ids.split(',').each do |id|
-          if Selectable.find(id)
+          if Selectable.find_by_id(id)
             values << Selectable.find(id).value
           end
         end
