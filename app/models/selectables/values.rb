@@ -4,7 +4,9 @@ module Selectables
       if ids
         values = []
         ids.split(',').each do |id|
-          values << Selectable.find(id).value
+          if Selectable.find(id)
+            values << Selectable.find(id).value
+          end
         end
         # returning a string with the value separated by commas. This is the format expected by select2
         return values.join(", ")
