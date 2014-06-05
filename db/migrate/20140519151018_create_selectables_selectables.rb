@@ -6,5 +6,6 @@ class CreateSelectablesSelectables < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :selectables_selectables, [:category, :value]
   end
 end
