@@ -7,5 +7,6 @@ fr:
   Category: "Catégorie"
   Editing selectable: "Modifier l'option"
   general_category: "Catégorie générale"
+  missing value from select option: "Aucune option n'a été choisie"
   selectable:
     general_category: "Catégorie générale"
