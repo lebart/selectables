@@ -1,4 +1,4 @@
 module Selectables
-  class Selectables::ApplicationController < ::ApplicationController
+  class Selectables::ApplicationController < ::Admin::AdminController
   end
 end
