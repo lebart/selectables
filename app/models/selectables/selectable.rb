@@ -2,17 +2,16 @@ module Selectables
   class Selectable < ActiveRecord::Base
     validates :category, presence: true
 
-    # will define the first category for selectables options
-    @general_categories = [ [I18n.t("selectable.general_category"), "general_category"] ]
-
-    # will adjust the selectables option to the general category
-    Selectable.where('category LIKE ?', "general_category" ).each do |category|
-      @general_categories << [I18n.t("selectable.#{category.value}"), "#{category.value}"]
-    end
-
     #Use the sort_alphabetical gem to sort the translated values.
     def self.general_category
-        @general_categories.sort_alphabetical
+        # will define the first category for selectables options
+        general_categories = [ [I18n.t("selectable.general_category"), "general_category"] ]
+
+        # will adjust the selectables option to the general category
+        Selectable.where('category LIKE ?', "general_category" ).each do |category|
+          general_categories << [I18n.t("selectable.#{category.value}"), "#{category.value}"]
+        end
+        general_categories.sort_alphabetical
     end
 
     # old bad method?
