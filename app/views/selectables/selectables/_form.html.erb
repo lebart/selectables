@@ -14,7 +14,7 @@
   <div class="form-group">
     <%= f.label :category, t("Category"), class: "col-sm-2 control-label" %>
     <div class="col-sm-4">
-        <%= f.select :category, Selectables::Selectable::SELECTABLE_CATEGORIES,{prompt: t("Category")}, { class: "form-control"} %>
+        <%= f.select :category, Selectables::Selectable.general_category,{prompt: t("Category")}, { class: "form-control"} %>
     </div>
   </div>
   <div class="form-group">

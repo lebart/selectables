@@ -11,7 +11,12 @@ module Selectables
     end
 
     #Use the sort_alphabetical gem to sort the translated values.
-    SELECTABLE_CATEGORIES = @general_categories.sort_alphabetical
+    def self.general_category
+        @general_categories.sort_alphabetical
+    end
+
+    # old bad method?
+    # SELECTABLE_CATEGORIES = @general_categories.sort_alphabetical
 
 
     # this array [I18n.t(value.selectable_value), value.selectable_value] will provide informations for
